@@ -1,17 +1,497 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flask Container Demo</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Command Center</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-  <main class="card">
-    <span class="status">Container is healthy</span>
-    <h1>Flask application is running!</h1>
-    <p>This browser page is served by Flask and Gunicorn inside Docker.</p>
-    <p>Container hostname: <code>{{ hostname }}</code></p>
-  </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <div>
+                <h2>AI CORE</h2>
+                <span>Command Center</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◈</span>
+                AI Agents
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◉</span>
+                Analytics
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>⚡</span>
+                Automations
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◌</span>
+                Workflows
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>▣</span>
+                Projects
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                All systems operational
+            </div>
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">AI OPERATIONS</p>
+                <h1>Command Center</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-btn">⌕</button>
+
+                <button class="notification">
+                    ♢
+                    <span></span>
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">G</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <small>AI Operator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span></span>
+                    AI ENGINE ONLINE
+                </div>
+
+                <h2>
+                    Build. Automate.<br>
+                    <strong>Intelligence at Scale.</strong>
+                </h2>
+
+                <p>
+                    Manage your AI agents, workflows, automations and
+                    intelligence from one centralized command center.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn">
+                        + Create AI Agent
+                    </button>
+
+                    <button class="secondary-btn">
+                        Explore Agents →
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="orb-container">
+
+                <div class="orb">
+                    <div class="orb-core">AI</div>
+                </div>
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Stats -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon purple">✦</div>
+
+                <div>
+                    <span>Active Agents</span>
+                    <h3>24</h3>
+                    <small class="positive">↑ 18.4% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">⚡</div>
+
+                <div>
+                    <span>Tasks Processed</span>
+                    <h3>18.7K</h3>
+                    <small class="positive">↑ 24.8% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">◉</div>
+
+                <div>
+                    <span>Success Rate</span>
+                    <h3>98.7%</h3>
+                    <small class="positive">↑ 2.1% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">◷</div>
+
+                <div>
+                    <span>AI Hours Saved</span>
+                    <h3>1,284</h3>
+                    <small class="positive">↑ 31.2% this month</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Grid -->
+        <section class="dashboard-grid">
+
+            <!-- AI Agents -->
+            <div class="panel agents-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="section-label">INTELLIGENCE</span>
+                        <h2>AI Agents</h2>
+                    </div>
+
+                    <button class="text-btn">View all →</button>
+                </div>
+
+
+                <div class="agent-list">
+
+                    <div class="agent">
+
+                        <div class="agent-icon purple-bg">◈</div>
+
+                        <div class="agent-info">
+                            <strong>DevOps Agent</strong>
+                            <span>Infrastructure & deployment</span>
+                        </div>
+
+                        <div class="agent-status">
+                            <span class="online"></span>
+                            Online
+                        </div>
+
+                    </div>
+
+
+                    <div class="agent">
+
+                        <div class="agent-icon blue-bg">◇</div>
+
+                        <div class="agent-info">
+                            <strong>Analytics Agent</strong>
+                            <span>Data analysis & insights</span>
+                        </div>
+
+                        <div class="agent-status">
+                            <span class="online"></span>
+                            Online
+                        </div>
+
+                    </div>
+
+
+                    <div class="agent">
+
+                        <div class="agent-icon green-bg">✧</div>
+
+                        <div class="agent-info">
+                            <strong>Support Agent</strong>
+                            <span>Customer intelligence</span>
+                        </div>
+
+                        <div class="agent-status">
+                            <span class="online"></span>
+                            Online
+                        </div>
+
+                    </div>
+
+
+                    <div class="agent">
+
+                        <div class="agent-icon orange-bg">⌁</div>
+
+                        <div class="agent-info">
+                            <strong>Security Agent</strong>
+                            <span>Threat detection</span>
+                        </div>
+
+                        <div class="agent-status idle">
+                            <span></span>
+                            Standby
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Activity -->
+            <div class="panel activity-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">REAL TIME</span>
+                        <h2>Activity</h2>
+                    </div>
+
+                    <span class="live">● LIVE</span>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot purple-dot"></div>
+
+                        <div>
+                            <strong>DevOps Agent completed deployment</strong>
+                            <span>Production environment</span>
+                            <small>2 min ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot blue-dot"></div>
+
+                        <div>
+                            <strong>Analytics Agent generated report</strong>
+                            <span>Weekly performance analysis</span>
+                            <small>8 min ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot green-dot"></div>
+
+                        <div>
+                            <strong>Automation workflow executed</strong>
+                            <span>Database backup</span>
+                            <small>14 min ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot orange-dot"></div>
+
+                        <div>
+                            <strong>Security scan completed</strong>
+                            <span>No critical threats detected</span>
+                            <small>21 min ago</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="bottom-grid">
+
+            <div class="panel performance-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">PERFORMANCE</span>
+                        <h2>AI Processing</h2>
+                    </div>
+
+                    <select>
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                    </select>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="chart-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <svg viewBox="0 0 800 220"
+                         preserveAspectRatio="none">
+
+                        <defs>
+                            <linearGradient id="area"
+                                            x1="0"
+                                            x2="0"
+                                            y1="0"
+                                            y2="1">
+
+                                <stop offset="0%"
+                                      stop-opacity=".35"/>
+
+                                <stop offset="100%"
+                                      stop-opacity="0"/>
+
+                            </linearGradient>
+                        </defs>
+
+                        <path
+                            d="M0 170
+                               C50 150 70 165 110 130
+                               S170 110 210 135
+                               S270 80 320 105
+                               S380 130 420 85
+                               S480 60 520 90
+                               S580 110 620 65
+                               S700 50 800 20
+                               L800 220
+                               L0 220 Z"
+                            fill="url(#area)"
+                        />
+
+                        <path
+                            d="M0 170
+                               C50 150 70 165 110 130
+                               S170 110 210 135
+                               S270 80 320 105
+                               S380 130 420 85
+                               S480 60 520 90
+                               S580 110 620 65
+                               S700 50 800 20"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="4"
+                        />
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Actions -->
+            <div class="panel quick-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">SHORTCUTS</span>
+                        <h2>Quick Actions</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button>
+                        <span>✦</span>
+                        New AI Agent
+                    </button>
+
+                    <button>
+                        <span>⚡</span>
+                        Create Workflow
+                    </button>
+
+                    <button>
+                        <span>◉</span>
+                        Analyze Data
+                    </button>
+
+                    <button>
+                        <span>▣</span>
+                        Generate Report
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>AI CORE v2.0</span>
+            <span>● Systems operational</span>
+        </footer>
+
+    </main>
+
 </body>
 </html>
+```
